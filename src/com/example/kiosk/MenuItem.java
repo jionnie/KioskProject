@@ -5,10 +5,42 @@ package com.example.kiosk;
  * @author jiwon jung
  */
 public class MenuItem {
-    int id;
-    String name;
-    int price;
-    String description;
+    private int id;
+    private String name;
+    private int price;
+    private String description;
+
+    /**
+     * getter 메소드
+     * id 값을 얻는다.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * getter 메소드
+     * name 값을 얻는다.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * getter 메소드
+     * price 값을 얻는다.
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * getter 메소드
+     * description 값을 얻는다.
+     */
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * 새로운 메뉴를 생성한다.
