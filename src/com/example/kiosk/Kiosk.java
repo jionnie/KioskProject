@@ -47,7 +47,7 @@ public class Kiosk {
     public void printMenu() {
         System.out.println("==================== [ SHAKESHACK MENU ] ====================");
         for (MenuItem menuItem : menuItems) {
-            System.out.println(menuItem.getId() + ". " + menuItem.getName() + " | " + menuItem.getPrice() + " | " + menuItem.getDescription());
+            System.out.println(menuItem);
         }
         System.out.println("0. 종료         | 종료");
         System.out.println("=============================================================");
@@ -85,10 +85,10 @@ public class Kiosk {
      */
     public void printSelectedMenu(int menuSelect) {
         switch (menuSelect) {
-            case 1 -> System.out.println(menuItems.get(0).getId() + ". " + menuItems.get(0).getName() + " | " + menuItems.get(0).getPrice() + " | " + menuItems.get(0).getDescription());
-            case 2 -> System.out.println(menuItems.get(1).getId() + ". " + menuItems.get(1).getName() + " | " + menuItems.get(1).getPrice() + " | " + menuItems.get(1).getDescription());
-            case 3 -> System.out.println(menuItems.get(2).getId() + ". " + menuItems.get(2).getName() + " | " + menuItems.get(2).getPrice() + " | " + menuItems.get(2).getDescription());
-            case 4 -> System.out.println(menuItems.get(3).getId() + ". " + menuItems.get(3).getName() + " | " + menuItems.get(3).getPrice() + " | " + menuItems.get(3).getDescription());
+            case 1 -> System.out.println(menuItems.get(0).toString());
+            case 2 -> System.out.println(menuItems.get(1).toString());
+            case 3 -> System.out.println(menuItems.get(2).toString());
+            case 4 -> System.out.println(menuItems.get(3).toString());
             case 0 -> System.exit(0);
         }
     }

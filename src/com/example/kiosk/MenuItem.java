@@ -43,6 +43,17 @@ public class MenuItem {
     }
 
     /**
+     * toString() 메소드 오버라이딩
+     * "1. ShackBurger | 6900 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거"와 같은 형식으로 리턴
+     *
+     * @return 각 속성(id, name, price, description)을 결합한 문자열
+     */
+    @Override
+    public String toString() {
+        return getId() + ". " + getName() + " | " + getPrice() + " | " + getDescription();
+    }
+
+    /**
      * 새로운 메뉴를 생성한다.
      *
      * @param id 메뉴 번호(고유 식별자)
