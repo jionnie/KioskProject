@@ -24,6 +24,7 @@ public class Kiosk {
 
     /**
      * 사용자의 입력과 처리를 반복하는 메소드
+     * selectMenu()와 printSelectedMenu()를 호출한다.
      */
     public void start() {
 
@@ -57,7 +58,7 @@ public class Kiosk {
      *
      * @return menuSelect 선택한 메뉴 번호 반환
      */
-    public int selectMenu() throws IllegalArgumentException {
+    public int selectMenu() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println();
