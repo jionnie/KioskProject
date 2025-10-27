@@ -2,6 +2,7 @@ package com.example.kiosk;
 
 /**
  * 개별 음식 항목을 관리하는 클래스
+ *
  * @author jiwon jung
  */
 public class MenuItem {
@@ -35,12 +36,30 @@ public class MenuItem {
     }
 
     /**
+     * id 값을 설정한다.
+     *
+     * @param id 메뉴 번호(고유 식별자)
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
      * name 값을 얻는다.
      *
      * @return name 메뉴 이름
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * name 값을 설정한다.
+     *
+     * @param name 메뉴 이름
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -53,12 +72,30 @@ public class MenuItem {
     }
 
     /**
+     * price 값을 설정한다.
+     *
+     * @param price 메뉴 이름
+     */
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    /**
      * description 값을 얻는다.
      *
      * @return description 메뉴 설명
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * description 값을 설정한다.
+     *
+     * @param description 메뉴 설명
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**

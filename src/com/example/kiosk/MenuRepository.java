@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 메뉴 데이터를 초기화 하고 제공하는 클래스
+ *
  * @author jiwon jung
  */
 public class MenuRepository {

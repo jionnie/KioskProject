@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
+ *
  * @author jiwon jung
  */
 public class Kiosk {
