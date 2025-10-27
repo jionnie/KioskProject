@@ -3,10 +3,17 @@ package com.example.kiosk;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 키오스크 프로그램의 view를 담당하는 클래스
+ *
+ * @author jiwon jung
+ */
 public class KioskView {
-    MenuRepository menuRepository = new MenuRepository();
-    List<Menu> menus = menuRepository.getMenus();
+    private List<Menu> menus;
 
+    public KioskView(List<Menu> menus) {
+        this.menus = menus;
+    }
     /**
      * 카테고리를 출력하는 메소드
      */
