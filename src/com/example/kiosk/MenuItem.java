@@ -11,49 +11,6 @@ public class MenuItem {
     private String description;
 
     /**
-     * getter 메소드
-     * id 값을 얻는다.
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * getter 메소드
-     * name 값을 얻는다.
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * getter 메소드
-     * price 값을 얻는다.
-     */
-    public int getPrice() {
-        return price;
-    }
-
-    /**
-     * getter 메소드
-     * description 값을 얻는다.
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * toString() 메소드 오버라이딩
-     * "1. ShackBurger | 6900 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거"와 같은 형식으로 리턴
-     *
-     * @return 각 속성(id, name, price, description)을 결합한 문자열
-     */
-    @Override
-    public String toString() {
-        return getId() + ". " + getName() + " | " + getPrice() + " | " + getDescription();
-    }
-
-    /**
      * 새로운 메뉴를 생성한다.
      *
      * @param id 메뉴 번호(고유 식별자)
@@ -66,5 +23,52 @@ public class MenuItem {
         this.name = name;
         this.price = price;
         this.description = description;
+    }
+
+    /**
+     * id 값을 얻는다.
+     *
+     * @return id 메뉴 번호(고유 식별자)
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * name 값을 얻는다.
+     *
+     * @return name 메뉴 이름
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * price 값을 얻는다.
+     *
+     * @return price 메뉴 가격
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * description 값을 얻는다.
+     *
+     * @return description 메뉴 설명
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * toString() 메소드 오버라이딩
+     * "1. ShackBurger | 6900 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거"와 같은 형식으로 리턴
+     *
+     * @return 번호 + ". " + 메뉴명 + " | " + 가격 + " | " + 설명을 결합한 문자열
+     */
+    @Override
+    public String toString() {
+        return getId() + ". " + getName() + " | " + getPrice() + " | " + getDescription();
     }
 }
