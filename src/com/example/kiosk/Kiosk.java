@@ -4,18 +4,19 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
+ * 키오스크 프로그램의 핵심 로직을 관리하는 클래스
  *
  * @author jiwon jung
  */
 public class Kiosk {
     private final Scanner sc = new Scanner(System.in);
     private List<Menu> menus; // Menu 객체를 저장하는 리스트 선언
-    private final KioskView kioskView = new KioskView();
+    private KioskView kioskView;
 
     // 생성자 주입
     public Kiosk(List<Menu> menus) {
         this.menus = menus;
+        kioskView = new KioskView(menus);
     }
 
     /**
@@ -36,6 +37,7 @@ public class Kiosk {
             }
 
             if (category == 0) { // 사용자 입력이 0이면 종료
+                sc.close();
                 return;
             }
 
@@ -45,7 +47,7 @@ public class Kiosk {
             }
 
             kioskView.printMenuItems(category); // 선택한 카테고리의 상세 메뉴를 출력하는 메소드 호출
-            
+
             int detailMenu = 0;
 
             try {
@@ -56,6 +58,7 @@ public class Kiosk {
             }
 
             if (detailMenu == 0) { // 사용자 입력이 0이면 종료
+                sc.close();
                 return;
             }
 
