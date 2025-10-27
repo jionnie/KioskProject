@@ -98,16 +98,4 @@ public class Menu {
     public void addItem(MenuItem menuItem) {
         menuItems.add(menuItem);
     }
-
-    /**
-     * 상세 메뉴를 출력하는 메소드
-     */
-    public void printMenuItems() {
-        System.out.println("===================== [ " + category.toUpperCase() + " MENU ] =====================");
-        for (MenuItem item : menuItems) {
-            System.out.println(item.toString());
-        }
-        System.out.println("0. 종료         | 종료");
-        System.out.println("===========================================================");
-    }
 }
