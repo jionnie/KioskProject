@@ -1,10 +1,13 @@
-package com.example.kiosk;
+package com.example.kiosk.repository;
+
+import com.example.kiosk.domain.Menu;
+import com.example.kiosk.domain.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 메뉴 데이터를 초기화 하고 제공하는 클래스
+ * 메뉴 데이터를 초기화하고 관리하는 클래스
  *
  * @author jiwon jung
  */
@@ -25,7 +28,7 @@ public class MenuRepository {
     }
 
     /**
-     * 상세 메뉴(MenuItem) 목록을 저장하는 리스트를 필드로 갖는 Menu를 요소로 갖는 리스트를 반환한다.
+     * Menu를 요소로 갖는 리스트를 반환하는 메소드
      * 원본의 보호를 위해 복사본을 반환한다.
      *
      * @return menus 메뉴 리스트 리턴

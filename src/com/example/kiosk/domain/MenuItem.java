@@ -1,4 +1,4 @@
-package com.example.kiosk;
+package com.example.kiosk.domain;
 
 /**
  * 개별 음식 항목을 관리하는 클래스
@@ -12,7 +12,7 @@ public class MenuItem {
     private String description;
 
     /**
-     * 새로운 메뉴를 생성한다.
+     * 새로운 상세 메뉴를 생성한다.
      *
      * @param id 메뉴 번호(고유 식별자)
      * @param name 메뉴 이름
@@ -36,30 +36,12 @@ public class MenuItem {
     }
 
     /**
-     * id 값을 설정한다.
-     *
-     * @param id 메뉴 번호(고유 식별자)
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
      * name 값을 얻는다.
      *
      * @return name 메뉴 이름
      */
     public String getName() {
         return name;
-    }
-
-    /**
-     * name 값을 설정한다.
-     *
-     * @param name 메뉴 이름
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
@@ -72,15 +54,6 @@ public class MenuItem {
     }
 
     /**
-     * price 값을 설정한다.
-     *
-     * @param price 메뉴 이름
-     */
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    /**
      * description 값을 얻는다.
      *
      * @return description 메뉴 설명
@@ -90,17 +63,8 @@ public class MenuItem {
     }
 
     /**
-     * description 값을 설정한다.
-     *
-     * @param description 메뉴 설명
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
      * toString() 메소드 오버라이딩
-     * "1. ShackBurger | 6900 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거"와 같은 형식으로 리턴
+     * "1. ShackBurger | 6900 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거"와 같은 형식으로 리턴한다.
      *
      * @return 번호 + ". " + 메뉴명 + " | " + 가격 + " | " + 설명을 결합한 문자열
      */

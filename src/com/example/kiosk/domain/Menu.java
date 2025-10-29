@@ -1,4 +1,4 @@
-package com.example.kiosk;
+package com.example.kiosk.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,15 +36,6 @@ public class Menu {
     }
 
     /**
-     * MenuItem를 저장하는 리스트를 설정한다.
-     * 
-     * @param menuItems MenuItem을 요소로 갖는 리스트
-     */
-    public void setMenuItems(List<MenuItem> menuItems) {
-        this.menuItems = menuItems;
-    }
-
-    /**
      * id 값을 얻는다.
      *
      * @return id 카테고리 번호(고유 식별자)
@@ -54,30 +45,12 @@ public class Menu {
     }
 
     /**
-     * id 값을 설정한다.
-     *
-     * @param id 카테고리 번호(고유 식별자)
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
      * category 값을 얻는다.
      *
      * @return category 카테고리 이름
      */
     public String getCategory() {
         return category;
-    }
-
-    /**
-     * category 값을 설정한다.
-     *
-     * @param category 카테고리 이름
-     */
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     /**
@@ -92,6 +65,7 @@ public class Menu {
 
     /**
      * 상세 메뉴를 menuItems에 추가하는 메소드
+     * 캡슐화로 인해 해당 메소드로 항목 추가하도록 함
      * 
      * @param menuItem 상세 메뉴
      */
