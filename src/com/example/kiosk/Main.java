@@ -1,7 +1,7 @@
-package com.example.kiosk.service;
+package com.example.kiosk;
 
+import com.example.kiosk.controller.Kiosk;
 import com.example.kiosk.domain.Menu;
-import com.example.kiosk.domain.MenuItem;
 import com.example.kiosk.domain.ShoppingCart;
 import com.example.kiosk.repository.MenuRepository;
 import com.example.kiosk.view.KioskView;
