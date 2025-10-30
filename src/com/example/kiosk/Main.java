@@ -4,6 +4,7 @@ import com.example.kiosk.controller.Kiosk;
 import com.example.kiosk.domain.Menu;
 import com.example.kiosk.domain.ShoppingCart;
 import com.example.kiosk.repository.MenuRepository;
+import com.example.kiosk.view.InputHandler;
 import com.example.kiosk.view.KioskView;
 
 import java.util.List;
@@ -22,7 +23,9 @@ public class Main {
         ShoppingCart shoppingCart = new ShoppingCart();
         KioskView kioskView = new KioskView(menus, shoppingCart);
 
-        Kiosk kiosk = new Kiosk(menus, shoppingCart, kioskView);
+        InputHandler inputHandler = new InputHandler();
+
+        Kiosk kiosk = new Kiosk(menus, shoppingCart, kioskView, inputHandler);
         kiosk.start();
     }
 }

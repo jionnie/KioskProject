@@ -4,7 +4,7 @@ public enum PersonType implements DiscountPolicy {
     NORMAL("일반", 0) {
         @Override
         public int discount(int price) {
-            return price;
+            return 0;
         }
     },
     STUDENT("학생", 3) {

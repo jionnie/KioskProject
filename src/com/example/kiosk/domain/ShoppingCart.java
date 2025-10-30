@@ -31,17 +31,39 @@ public class ShoppingCart {
     }
 
     /**
+     * 장바구니에서 메뉴를 빼는 메소드
+     *
+     * @param id 사용자에게 입력받은 삭제할 메뉴 id
+     */
+    public void removeFromCart(int id) {
+        MenuItem removed = cart.stream()
+                .filter(menuItem -> menuItem.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        cart.remove(removed);
+    }
+
+    /**
      * 지불해야할 총 금액을 계산하고 반환하는 메소드
      *
+     * @param personType 사용자가 입력한 할인 적용 타입
      * @return amount 지불해야할 총 금액의 합
      */
-    public int getAmountToPay() {
+    public int getAmountToPay(int personType) {
         int amount = 0;
 
         for (MenuItem menuItem : cart) {
             amount += menuItem.getPrice();
         }
 
-        return amount;
+        int discountedPrice = switch (personType) {
+            case 1 -> PersonType.NORMAL.discount(amount);
+            case 2 -> PersonType.STUDENT.discount(amount);
+            case 3 -> PersonType.SOLDIER.discount(amount);
+            default -> amount;
+        };
+
+        return amount - discountedPrice;
     }
 }

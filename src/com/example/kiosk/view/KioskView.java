@@ -5,9 +5,7 @@ import com.example.kiosk.domain.MenuItem;
 import com.example.kiosk.domain.PersonType;
 import com.example.kiosk.domain.ShoppingCart;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * 키오스크 프로그램의 view를 담당하는 클래스
@@ -25,14 +23,18 @@ public class KioskView {
 
     /**
      * 카테고리를 출력하는 메소드
+     * 장바구니 리스트를 매개값으로 받아 empty 여부에 따라 카테고리 다르게 출력
+     *
+     * @param cart 장바구니에 담긴 MenuItem 리스트
      */
     public void showCategory(List<MenuItem> cart) {
+        System.out.println();
         System.out.println("====================== [ MAIN MENU ] ======================");
-        for (Menu menu : menus) {
+        for (Menu menu : menus) { // 장바구니에 항목이 없을 경우 여기만 출력
             System.out.println(menu.toString());
         }
 
-        if (!cart.isEmpty()) { // 장바구니에 항목이 있을 경우
+        if (!cart.isEmpty()) { // 장바구니에 항목이 있을 경우 여기까지 출력
             System.out.println("====================== [ ORDER MENU ] =====================");
             System.out.println("4. Orders");
             System.out.println("5. Cancel");
@@ -51,9 +53,11 @@ public class KioskView {
         Menu menu = menus.get(category - 1); // 사용자가 선택한 카테고리의 Menu 객체 가져오기
 
         System.out.println("===================== [ " + menu.getCategory().toUpperCase() + " MENU ] =====================");
-        for (MenuItem item : menu.getMenuItems()) {
-            System.out.println(item.toString());
-        }
+
+        menu.getMenuItems().stream()
+                .map(MenuItem :: toString)
+                .forEach(System.out :: println);
+
         System.out.println("0. 뒤로가기");
     }
 
@@ -90,7 +94,6 @@ public class KioskView {
                 System.out.println("===========================================================");
                 System.out.println(item.toString());
                 System.out.println("===========================================================");
-                System.out.print("위 메뉴를 장바구니에 추가하시겠습니까? (1. 확인 | 2. 취소)");
                 break;
             }
         }
@@ -100,22 +103,11 @@ public class KioskView {
      * 장바구니를 출력하는 메소드
      */
     public void showShoppingCartList() {
-        int id = 1; // 장바구니에 들어있는 항목의 번호
-
-        System.out.println("아래와 같이 주문하시겠습니까?");
 
         System.out.println("======================= [ ORDERS ] ========================");
         for (MenuItem menuItem : shoppingCart.getCart()) {
-            System.out.printf("%d. %s | %s | %s\n", id, menuItem.getName(), menuItem.getPrice(), menuItem.getDescription());
-            id++;
+            System.out.printf("%d. %s | %s | %s\n", menuItem.getId(), menuItem.getName(), menuItem.getPrice(), menuItem.getDescription());
         }
-
-        System.out.println("======================= [ TOTALS ] ========================");
-        System.out.print("지불 금액: ");
-        System.out.println(shoppingCart.getAmountToPay() + "원");
-
-        System.out.println("===========================================================");
-        System.out.print("주문하시겠습니까? (1. 주문 | 2. 메뉴판)");
     }
 
     /**
@@ -129,18 +121,5 @@ public class KioskView {
             System.out.println(i + ". " + type.getPersonType() + ": " + type.getDiscountPercent() + "%");
             i++;
         }
-        System.out.print("할인 정보를 입력해주세요.");
-    }
-
-    /**
-     * 사용자 입력을 받는 메소드
-     * 
-     * @param sc Scanner 객체
-     * @return input 사용자 입력
-     */
-    public int getUserInput(Scanner sc) {
-        System.out.print("\n번호를 입력하세요: ");
-
-        return Integer.parseInt(sc.nextLine());
     }
 }
