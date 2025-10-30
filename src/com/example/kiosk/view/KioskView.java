@@ -51,9 +51,11 @@ public class KioskView {
         Menu menu = menus.get(category - 1); // 사용자가 선택한 카테고리의 Menu 객체 가져오기
 
         System.out.println("===================== [ " + menu.getCategory().toUpperCase() + " MENU ] =====================");
-        for (MenuItem item : menu.getMenuItems()) {
-            System.out.println(item.toString());
-        }
+
+        menu.getMenuItems().stream()
+                .map(MenuItem :: toString)
+                .forEach(System.out :: println);
+
         System.out.println("0. 뒤로가기");
     }
 
