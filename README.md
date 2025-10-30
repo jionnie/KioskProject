@@ -38,6 +38,7 @@ com.example.kiosk
              ├── repository
                     └── MenuRepository
              ├── view
-                    └── KioskView
+                    ├── KioskView
+                    └── InputHandler
              └── Main.java
 ```
